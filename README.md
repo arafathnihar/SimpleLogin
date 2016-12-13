@@ -14,7 +14,7 @@ source server/database.sql
 
 update the databse settings and authy api key server/config.ini
 
-# Run following commands
+###### Run following commands
 
 cd server && composer install
 cd ../
