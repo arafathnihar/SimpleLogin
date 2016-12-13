@@ -2,3 +2,5 @@
 /client/.idea
 /server/.idea
 /server/vendor
+server/.gitignore
+server/composer.lock

@@ -1,0 +1,19 @@
+<div class="container">
+    <section class="row" style="padding-top: 100px;">
+        <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+            <h3 class="col-md-12 text-center"> Welcome Home</h3>
+            <br>
+            <div class="alert alert-danger" ng-show="vm.failed">
+                <strong>Error!</strong> {{vm.failMessage}}
+            </div>
+            <div class="alert alert-success" ng-show="vm.success">
+                <strong>Error!</strong> {{vm.successMessage}}
+            </div>
+            <div class="text-center form-group">
+                <button type="submit" class="btn btn-warning" ng-click="vm.logOut()">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </section>
+</div>

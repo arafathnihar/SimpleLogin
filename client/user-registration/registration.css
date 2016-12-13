@@ -1,0 +1,55 @@
+.intl-tel-input .country-list {
+    z-index: 4;
+}
+
+#phone_number_input {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.input-group .form-control:focus {
+    z-index: 0;
+}
+
+/*!*==================================================*/
+/*=            Bootstrap 3 Media Queries             =*/
+/*==================================================*!*/
+
+/*!*==========  Mobile First Method  ==========*!*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+    /*#phone_number_input {*/
+    /*width: 276px;*/
+    /*}*/
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+    #phone_number_input, .country-list {
+        width: 510px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+    #phone_number_input, .country-list {
+        width: 499px;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+    #phone_number_input, .country-list {
+        width: 323px;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+    #phone_number_input, .country-list {
+        width: 389px;
+    }
+
+}
+

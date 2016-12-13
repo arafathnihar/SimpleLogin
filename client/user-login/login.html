@@ -1,0 +1,69 @@
+<div class="container">
+    <section class="row" style="padding-top: 100px;">
+        <h3 class="col-md-12 text-center"> Login </h3>
+        <br>
+        <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+            <form name="loginForm" class="signin form-horizontal" autocomplete="off" novalidate>
+                <fieldset>
+                    <div class="form-group">
+                        <div class="alert alert-danger" ng-show="vm.failed">
+                            <strong>Error!</strong> {{vm.failMessage}}
+                        </div>
+                        <div class="alert alert-success" ng-show="vm.success">
+                            <strong>Success!</strong> {{vm.successMessage}}
+                        </div>
+                    </div>
+                    <div class="form-group"
+                         ng-class="{ 'has-error': loginForm.username.$invalid && loginForm.$submitted }">
+                        <div class="input-group">
+                        <span class="input-group-addon">
+                              <i class="text-muted glyphicon glyphicon-user"></i>
+                        </span>
+                            <input ng-model="vm.login.username" type="text" id="username" name="username"
+                                   placeholder="Username"
+                                   class="form-control"
+                                   ng-minlength="3"
+                                   required>
+                        </div>
+                        <div class="help-block" ng-messages="loginForm.username.$error"
+                             ng-if="loginForm.$submitted">
+                            <div ng-messages-include="ulility/error-list.html"></div>
+                        </div>
+                    </div>
+                    <div class="form-group"
+                         ng-class="{ 'has-error': loginForm.password.$invalid && loginForm.$submitted }">
+                        <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="text-muted glyphicon glyphicon-asterisk"></i>
+                        </span>
+                            <input ng-minlength="6" ng-model="vm.login.password" type="password" id="password"
+                                   name="password" placeholder="Password" class="form-control" required>
+                        </div>
+                        <div class="help-block" ng-messages="loginForm.password.$error"
+                             ng-if="loginForm.$submitted">
+                            <div ng-messages-include="ulility/error-list.html"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                        <span class="input-group-addon" id="toggle-span">
+                            Verification
+                        </span>
+                            &nbsp;
+                            <toggle ng-model="vm.login.verificationMethod" on="One Touch" off="Soft Token"></toggle>
+                        </div>
+                    </div>
+                    <div class="text-center form-group">
+                        <button type="submit" class="btn btn-success btn-1 btn-block" ng-click="vm.userLogin()">
+                            sign in
+                        </button>
+                    </div>
+                    <div class="forgot-password">
+                        <i> Don't have an account?</i>
+                        <a ui-sref="registration"> Sign up</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+</div>

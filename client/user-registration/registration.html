@@ -1,0 +1,86 @@
+<div class="container">
+    <section class="row" style="padding-top: 100px;">
+        <h3 class="col-md-12 text-center"> Sign up </h3>
+        <br>
+        <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+            <form name="registrationForm" class="signin form-horizontal" autocomplete="off" novalidate>
+                <fieldset>
+                    <div class="form-group">
+                        <div class="alert alert-danger" ng-show="vm.failed">
+                            <strong>Error!</strong> {{vm.failMessage}}
+                        </div>
+                        <div class="alert alert-success" ng-show="vm.success">
+                            <strong>Success!</strong> {{vm.successMessage}}
+                        </div>
+                    </div>
+                    <div class="form-group"
+                         ng-class="{ 'has-error': registrationForm.username.$invalid && registrationForm.$submitted }">
+                        <div class="input-group">
+                        <span class="input-group-addon">
+                              <i class="text-muted glyphicon glyphicon-user"></i>
+                        </span>
+                            <input ng-model="vm.registration.username" type="text" id="username" name="username"
+                                   placeholder="Username"
+                                   class="form-control"
+                                   ng-minlength="3"
+                                   required>
+                        </div>
+                        <div class="help-block" ng-messages="registrationForm.username.$error"
+                             ng-if="registrationForm.$submitted">
+                            <div ng-messages-include="ulility/error-list.html"></div>
+                        </div>
+                    </div>
+                    <div class="form-group"
+                         ng-class="{ 'has-error': registrationForm.email.$invalid && registrationForm.$submitted }">
+                        <div class="input-group">
+                        <span class="input-group-addon">
+                              <i class="text-muted glyphicon glyphicon-envelope"></i>
+                        </span>
+                            <input ng-model="vm.registration.email" type="email" id="email" name="email"
+                                   placeholder="Email" class="form-control" required>
+                        </div>
+                        <div class="help-block" ng-messages="registrationForm.email.$error"
+                             ng-if="registrationForm.$submitted">
+                            <div ng-messages-include="ulility/error-list.html"></div>
+                        </div>
+                    </div>
+                    <div class="form-group"
+                         ng-class="{ 'has-error': registrationForm.phone.$invalid && registrationForm.$submitted }">
+                        <div class="input-group">
+                            <input id="phone_number_input" type="text" international-phone-number default-country="lk"
+                                   ng-model="vm.registration.phone" class="form-control" name="phone"
+                                   country="vm.registration.country" required>
+                        </div>
+                        <div class="help-block" ng-messages="registrationForm.phone.$error"
+                             ng-if="registrationForm.$submitted">
+                            <div ng-messages-include="ulility/error-list.html"></div>
+                        </div>
+                    </div>
+                    <div class="form-group"
+                         ng-class="{ 'has-error': registrationForm.password.$invalid && registrationForm.$submitted }">
+                        <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="text-muted glyphicon glyphicon-asterisk"></i>
+                        </span>
+                            <input ng-minlength="6" ng-model="vm.registration.password" type="password" id="password"
+                                   name="password" placeholder="Password" class="form-control" required>
+                        </div>
+                        <div class="help-block" ng-messages="registrationForm.password.$error"
+                             ng-if="registrationForm.$submitted">
+                            <div ng-messages-include="ulility/error-list.html"></div>
+                        </div>
+                    </div>
+                    <div class="text-center form-group">
+                        <button type="submit" class="btn btn-success btn-1 btn-block" ng-click="vm.signUp()">
+                            sign in
+                        </button>
+                    </div>
+                    <div class="forgot-password">
+                        <i> Already have an account?</i>
+                        <a ui-sref="login"> Login </a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+</div>

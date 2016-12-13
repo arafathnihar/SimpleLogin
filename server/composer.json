@@ -1,0 +1,10 @@
+{
+  "require": {
+    "authy/php": "2.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Authy": "lib"
+    }
+  }
+}
