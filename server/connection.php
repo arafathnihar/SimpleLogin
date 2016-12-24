@@ -1,16 +1,20 @@
 <?php
 
-// $config = parse_ini_file('config.ini');
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
 $server = $url["host"];
 $username = $url["user"];
 $password = $url["pass"];
-$db = substr($url["path"], 1);
+$dbname = substr($url["path"], 1);
 
-$db = new PDO(
-    'mysql:host=' . $server . ';dbname=' . $db,
-    $username,
-    $cpassword);
-
-// $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try {
+    $pdo = new PDO("mysql:host=".$server."; dbname=".$dbname, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    foreach($pdo->query('SELECT title FROM news') as $row) {
+        echo htmlentities($row['title']);
+    }
+    $pdo = null;
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}
