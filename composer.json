@@ -1,8 +1,9 @@
 {
   "config": {
-        "vendor-dir": "server/vendor"
+      "vendor-dir": "server/vendor"
     },
   "require": {
+    "php": "^5.6.29",
     "authy/php": "2.*"
   },
   "autoload": {
