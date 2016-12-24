@@ -3,8 +3,7 @@
         "vendor-dir": "server/vendor"
     },
   "require": {
-    "authy/php": "2.*",
-    "ext-mcrypt": "*"
+    "authy/php": "2.*"
   },
   "autoload": {
     "psr-0": {
