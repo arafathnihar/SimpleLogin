@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/arafathnihar/SimpleLogin/issues"
   },
-  "homepage": "https://github.com/arafathnihar/SimpleLogin#readme"
+  "homepage": "https://github.com/arafathnihar/SimpleLogin#readme",
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  }
 }
