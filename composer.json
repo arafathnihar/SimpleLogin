@@ -9,5 +9,6 @@
     "psr-0": {
       "Authy": "lib"
     }
-  }
+  },
+  "ext-mcrypt": "*"
 }
