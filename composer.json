@@ -1,4 +1,7 @@
 {
+  "config": {
+        "vendor-dir": "server/vendor"
+    },
   "require": {
     "authy/php": "2.*"
   },
