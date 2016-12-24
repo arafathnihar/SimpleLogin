@@ -4,7 +4,7 @@
     },
   "require": {
     "authy/php": "2.*",
-    "ext-mcrypt": "*",
+    "ext-mcrypt": "*"
   },
   "autoload": {
     "psr-0": {
