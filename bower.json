@@ -24,5 +24,8 @@
     "angular-bootstrap-toggle": "^0.1.2",
     "ng-dialog": "^0.6.4",
     "angular-block-ui": "^0.2.2"
-  }
+  },
+ "resolutions": {
+    "angular": "1.6.1"
+ }
 }
