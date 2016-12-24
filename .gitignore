@@ -4,6 +4,5 @@
 /server/vendor
 server/.gitignore
 server/composer.lock
-composer.lock
 node_modules/
 
